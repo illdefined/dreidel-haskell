@@ -1,8 +1,8 @@
 module Main where
 
-import System.Random
+import Crypto.Random.API
 
-letter :: RandomGen g => g -> (Char, g)
+letter :: SystemRandom g => g -> (Char, g)
 letter gen = (letters !! index, gen')
 	where letters = "נגהש"
 		(index, gen') = randomR (0, length letters - 1) gen
